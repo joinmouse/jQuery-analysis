@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .btn {
+      width: 100px;
+      height: 100px;
+      background: red;
+      border:1px solid #ccc;  
+    }
+    .active {
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="btn">text1</div>
+  <div class="btn">text2</div>
+
+  <script src="jquery.js"></script>
+  <script>
+    var $x = $('.btn')
+    var div = $x[0]  //返回数组，获取第一个div
+    var div = $x[0]  //返回数组，获取第二个div
+
+    $x.on('click',function(){
+      $x.toggleClass('active')
+      var ht = $x.html('<b>frank</b>') 
+    })
+
+    //获取div中的文本内容
+    var text = $x.text() 
+    console.log(text)
+    //修改div中的文本内容
+    var text = $x.text('hello') 
+    console.log(text)
+    
+    var ht = $x.html() 
+    console.log(ht)
+  </script>
+</body>
+</html>
