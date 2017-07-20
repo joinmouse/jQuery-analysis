@@ -13,10 +13,10 @@
   <div>3</div>
 
   <script type="text/javascript">
-    var $div = $('div')
-    var div1 = $div[0]
-    //var div1 = $div.get(2)    通过jquery自带的get方法，转换DOM对象
-    div1.style.color = 'red'
+    var div = document.querySelector('div') //DOM获取对象
+    var $div = $(div)        //通过$(dom对象)转换为jQuery对象
+    var $first = $div.first();       //调用jQuery方法，找到第一个div元素
+    $first.css('color','red')       //为第一个元素设置颜色
   </script>
 </body>
 </html>
