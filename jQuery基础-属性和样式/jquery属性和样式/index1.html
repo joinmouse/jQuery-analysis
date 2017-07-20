@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    input {
+    display    : block;
+		margin     : 10px;
+		padding    : 10px;
+		background : red;
+		border     : 1px solid #ccc;
+    }
+  </style>
+  
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+      <input type="text" value="set value">
+      <input type="text" value="get value">
+      <input type="text" value="callback value">
+      <input type="text" value="remove value">
+    </form>
+
+
+    <script tyep="text/javascript">
+      $('input:first').attr('value','wahaha')
+
+      $('input:eq(1)').attr('value')
+
+      $('input:eq(2)').attr('value',function(i,val){
+        return 'wuqi' + val
+      })
+
+      $('input:eq(3)').removeAttr('value')
+    </script>
+</body>
+</html>
