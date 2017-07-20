@@ -1,1 +1,2 @@
 # jQuery-analysis
+初心：希望通过对jQuery这个前端经典库的解读，一方面更好的掌握原生的JS各种DOM操作，一方面学习一些jQuery中优雅的封装技巧和构建思路
