@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>creatNode</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <style>
     .left,.right {
         width: 100px;
@@ -30,6 +31,7 @@
   </div>
 
   <script type="text/javascript">
+  /* 原生的JS创建操作DOM
     var body = document.querySelector('body')
     var div = document.querySelector('.left')
 
@@ -41,6 +43,14 @@
       rightDiv.innerText = "动态的创建DIV节点" 
       body.appendChild(rightDiv)
     })
+  */
+
+  //jquery
+  let $body = $('body');
+  $('div').on('click',function(){
+    let div = $("<div class='right'>动态创建DIV节点</div>")
+    $body.append(div)
+  })
   </script>
 </body>
 </html>
