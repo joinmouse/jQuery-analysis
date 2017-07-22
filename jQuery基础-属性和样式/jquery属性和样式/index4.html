@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>val()</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body> 
+  <div>
+    <select id="test1">
+      <option value="option1">1号</option>
+      <option value="option2">2号</option>
+      <option value="option3">3号</option>
+    </select>
+  </div> 
+  
+  <div>
+    <input type="checkbox" value="check1">多选1
+    <input type="checkbox" value="check2">多选2
+    <input type="checkbox" value="check3">多选3
+    <input type="checkbox" value="check4">多选4
+  </div>
+
+  <div>
+    <input type="radio" value="radio1">单选1
+    <input type="radio" value="radio2">单选2
+    <input type="radio" value="radio3">单选3
+  </div>
+  
+  <script type="text/javascript">
+    $('#test1').val("option2")     //选中option中的2号
+
+    $(':checkbox').val(["check2","check3"])   //多选按钮选中2和3
+    $(':radio').val(["radio2"])            //单选按钮选中2
+  </script>
+</body>
+</html>
