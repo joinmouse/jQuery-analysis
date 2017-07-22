@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>toggleClass</title>
+  <style>
+    table {
+      border: 1px solid #ddd;
+      margin: 50px auto;
+    }
+    td {
+      padding: 5px;
+    }
+    .class1 {
+      background: red;
+    }
+    .class2 {
+      background: blue;
+    }
+  </style>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <table id="table">
+        <tr>
+            <td>wuqi</td>
+            <td>www</td>
+        </tr>
+        <tr>
+            <td>wuqi</td>
+            <td>www</td>
+        </tr>
+        <tr>
+            <td>wuqi</td>
+            <td>www</td>
+        </tr>
+        <tr>
+            <td>wuqi</td>
+            <td>www</td>
+        </tr>
+        <tr>
+            <td>wuqi</td>
+            <td>www</td>
+        </tr>
+    </table>
+  
+    <script>
+      $("#table tr:odd").toggleClass("class1"); //为偶数行切换添加class1属性
+
+      $("#table tr:even").toggleClass("class2") //奇数行切换添加class2属性
+    </script>
+</body>
+</html>
