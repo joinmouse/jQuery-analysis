@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>creatNode</title>
+  <style>
+    .left,.right {
+        width: 100px;
+        height: 90px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 1px solid #ccc;
+    }
+    
+    .left {
+        background: red;
+    }
+    
+    .right {
+        background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">
+    点击当前区域会动态创建元素节点
+  </div>
+
+  <script type="text/javascript">
+    var body = document.querySelector('body')
+    var div = document.querySelector('.left')
+
+    div.addEventListener('click',function(){
+      //创建一个div元素，为其设置一个class=right的属性
+      var rightDiv = document.createElement('div')
+      rightDiv.setAttribute('class','right')
+      //动态的为创建的节点添加内容,将节点添加到body上
+      rightDiv.innerText = "动态的创建DIV节点" 
+      body.appendChild(rightDiv)
+    })
+  </script>
+</body>
+</html>
