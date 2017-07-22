@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>clone</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="clone">
+    <h3>仅复制节点结构 => clone()</h3>
+    <p>你喜欢的水果是?</p>
+    <ul>
+      <li>苹果</li>
+      <li>橘子</li>
+      <li>菠萝</li>
+    </ul> 
+  </div>
+  
+  <div class="cloneTrue">
+    <h3>复制节点结构、绑定的事件、数据 => clone(true)</h3>
+    <p>你喜欢的水果是?</p>
+    <ul>
+      <li>苹果</li>
+      <li>橘子</li>
+      <li>菠萝</li>
+    </ul> 
+  </div>
+
+  <script type="text/javascript">
+    $('.clone ul li').on('click',function(){
+      $(this).clone().appendTo('ul:first')  //复制当前点击的节点，并将其追加到ul中
+    })
+
+    $('.cloneTrue ul li').on('click',function(){
+      console.log(this)
+      //复制当前点击的节点元素和其所绑定的点击事件，并将其追加到ul中
+      $(this).clone(true).appendTo('ul:last')  
+    })
+  </script>
+</body>
+</html>
