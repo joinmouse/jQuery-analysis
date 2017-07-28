@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>animate操作</title>
+  <style>
+        .div {
+           width:80px;
+           height:80px;
+           background-color:red;
+           position:relative
+        }
+        button {
+          width: 100px;
+          height: 50px;
+          margin-bottom: 20px;
+        }
+  </style>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btn1">变宽</button>
+    <button id="btn2">复原</button>
+    <button id="btn3">变宽变大移动</button>
+    <button id="btn4">多个动画</button>
+    <button id="btn5">停止动画</button>
+
+    <div class="div"></div>
+
+    <script>
+      $div = $('.div')
+      $("#btn1").on('click', function(e){
+          $div.animate({width: '200px'});
+      });
+      $("#btn2").on('click', function(){
+          $div.animate({
+              width:'80px',
+              height: '80px',
+              left: '0px',
+              top: '0px',
+              opacity: 1
+          }, 500);
+      });
+      $("#btn3").on('click', function(){
+          $div.animate({
+              width:'150px',
+              height: '150px',
+              left: '100px',
+              top: '100px',
+              opacity: 0.8  
+          }, 500);
+      })
+
+      $('#btn4').on('click',function(){
+        $div.animate({width:'150',height:'150px'})   //采用jQuery的链式调用写法，简化代码
+          .animate({left:'200px'})
+          .animate({top:'200px'})
+          .animate({left:'0px'})
+          .animate({top:'0px'})
+          .animate({width:'80px',height:'80px'})
+      })
+      
+      $('#btn5').on('click',function(){
+        $div.stop(true)
+      })
+    </script>
+    
+</body>
+</html>
