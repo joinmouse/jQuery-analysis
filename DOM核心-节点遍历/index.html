@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        button {
+            margin-right: 20px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>文档遍历处理</h2>
+<button id="test1">文档筛选eq</button>
+<button id="test2">文档筛选filter</button>
+<button id="test3">文档筛选not</button>
+<button id="test4">树遍历children</button>
+<button id="test5">树遍历closest</button>
+<button id="test6">树遍历find</button>
+
+<h2>节点树</h2>
+<ul class="level-1">
+  <li class="item-i">I</li>
+  <li class="item-ii">II
+    <ul class="level-2">
+      <li class="item-a">A</li>
+      <li class="item-b">B
+        <ul class="level-3">
+          <li class="item-1">1</li>
+          <li class="item-2">2</li>
+          <li class="item-3">3</li>
+        </ul>
+      </li>
+      <li class="item-c">C</li>
+    </ul>
+  </li>
+  <li class="item-iii">III</li>
+</ul>
+
+<script>
+    //通过eq()查找对应的序列的第三个li元素
+    $('#test1').on('click',function(){
+        $('li').eq(2).css('background','red')  
+    })
+    //通过filter()方法来进行筛选奇数的li元素
+    $("#test2").click(function() {
+        $('li').filter(':even').css('background-color', 'blue');
+    })
+    //通过not()方法进行否定的筛选，既除xxx外，仅查找同胞元素
+    $("#test3").click(function() {
+	    $('li').not(':even').css('background-color', 'red');
+    })
+    //childern()查找儿子元素
+    $("#test4").click(function() {
+	    $('ul.level-2').children().css('background-color', 'yellow');
+    })
+    //closest()方法是取得最近的匹配元素，从元素本身开始逐级向上
+    $("#test5").click(function() {
+	    $('li.item-a').closest('ul').css('background-color', 'red');
+    })
+    //find()就不必说了，常用的查找方法
+    $("#test6").click(function() {
+	    $('li.item-ii').find('li').css('background-color', 'blue');
+    })
+</script>
+</body>
+</html>
