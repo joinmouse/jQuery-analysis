@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>对象的创建</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    
+<div id="aaron"></div>
+
+<script type="text/javascript">
+
+//类一
+function ajQuery() {
+  this.name = 'jQuery';
+  this.sayName = function() {
+    return this.name
+  }
+}
+var a = new ajQuery()
+var b = new ajQuery()
+var c = new ajQuery()
+ 
+
+ 
+// 类二
+function ajQuery() {
+    this.name = 'jQuery'
+}
+ajQuery.prototype = {
+    sayName: function() {
+    return this.name
+    }
+}
+var a = new ajQuery()
+var b = new ajQuery()
+var c = new ajQuery()
+
+
+// jQuery的写法
+var $jQuery = function(selector, context) {
+  return new $jQuery.fn.init(selector, context);
+}
+
+$jQuery.fn = $jQuery.prototype = {
+  constructor: $jQuery,
+  init: function() {
+    this.name = 'aaron'
+    return this;
+  }
+  
+}
+
+var $a = $jQuery();
+
+console.log($a)
+
+</script>
+</body>
+</html>
